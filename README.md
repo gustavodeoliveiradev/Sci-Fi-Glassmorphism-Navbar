@@ -11,16 +11,16 @@ Uma barra de navegação moderna com efeitos de Glassmorphism e interatividade a
 ## 🚀 Evolução do Projeto
 Nesta etapa, focamos na profundidade visual e na organização do código utilizando boas práticas de CSS.
 
-### 🛠️ Implementações do Dia 2:
-- **Mesh Gradient Background:** Criação de um fundo imersivo estilo "nebulosa" usando múltiplos `radial-gradients`.
-- **CSS Custom Properties (Variables):** Organização de uma paleta de cores "Neon Spectrum" no `:root` para facilitar a manutenção.
-- **Glassmorphism Refinado:** Ajuste de desfoque (`backdrop-filter`) e bordas translúcidas.
-- **Interatividade Dinâmica:** Sistema de *Glow Neon* individual para cada ícone via classes específicas.
-- **Correção de Layout:** Centralização absoluta da navbar utilizando `transform: translateX(-50%)`.
+### 🛠️ Implementações do Dia 3:
+- **Keyframes Avançados:** Criação de animações de entrada (`slideUp` e `dropIcon`) para um carregamento dinâmico da interface.
+- **Animation Chaining:** Técnica de encadeamento de múltiplas animações em um único elemento (movimento + efeito de brilho).
+- **Staggering Effect:** Implementação de atrasos calculados (`animation-delay`) para criar um efeito cascata na descida dos ícones.
+- **Efeito Flicker Neon:** Micro-interação visual que simula a ativação de energia na borda da navbar ao finalizar o carregamento.
+- **Cubic-Bezier Smoothing:** Uso de curvas de transição personalizadas para movimentos mais orgânicos e menos lineares.
 
 ## 📅 Cronograma de Evolução
 - [x] **Dia 1 (Dom):** Estrutura semântica e Layout Base.
 - [x] **Dia 2 (Seg):** Refinamento de Glassmorphism, Mesh Gradients e Variáveis Neon.
-- [ ] **Dia 3 (Ter):** Animações de entrada (Keyframes) e Micro-interações de clique.
-- [ ] **Dia 4 (Qua):** Lógica de "Item Ativo" com JS.
+- [x] **Dia 3 (Ter):** Animações de entrada (Keyframes) e encadeamento de efeitos.
+- [ ] **Dia 4 (Qua):** Lógica de "Item Ativo" com JavaScript e Indicador Deslizante.
 - [ ] **Dia 5 (Qui):** Responsividade e adaptação para Mobile.

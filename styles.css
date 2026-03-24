@@ -70,6 +70,9 @@ body {
     border-radius: 50px;
     padding: 5px 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    animation:
+        slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+        flicker 1.5s linear 0.8s forwards;
 }
 
 .navigation ul {
@@ -77,6 +80,33 @@ body {
     gap: 15px;
     list-style: none;
     padding: 5px;
+}
+
+.navigation ul li {
+    opacity: 0;
+    /* Começam invisíveis */
+    animation: dropIcon 0.5s ease forwards;
+}
+
+/* Delays individuais para o efeito cascata */
+.navigation ul li:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.navigation ul li:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.navigation ul li:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.navigation ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.navigation ul li:nth-child(5) {
+    animation-delay: 0.9s;
 }
 
 /* Estilo base para todos os links */
@@ -98,32 +128,83 @@ body {
 }
 
 /* Hover Individual usando as variáveis do root */
-.navigation li a.nav-home:hover { 
-    background-color: var(--neon-home); 
+.navigation li a.nav-home:hover {
+    background-color: var(--neon-home);
     box-shadow: 0 0 25px var(--neon-home);
-    color: #000; 
+    color: #000;
 }
 
-.navigation li a.nav-user:hover { 
-    background-color: var(--neon-user); 
+.navigation li a.nav-user:hover {
+    background-color: var(--neon-user);
     box-shadow: 0 0 25px var(--neon-user);
-    color: #000; 
+    color: #000;
 }
 
-.navigation li a.nav-dashboard:hover { 
-    background-color: var(--neon-dashboard); 
+.navigation li a.nav-dashboard:hover {
+    background-color: var(--neon-dashboard);
     box-shadow: 0 0 25px var(--neon-dashboard);
-    color: #000; 
+    color: #000;
 }
 
-.navigation li a.nav-chats:hover { 
-    background-color: var(--neon-chats); 
+.navigation li a.nav-chats:hover {
+    background-color: var(--neon-chats);
     box-shadow: 0 0 25px var(--neon-chats);
-    color: #000; 
+    color: #000;
 }
 
-.navigation li a.nav-cart:hover { 
-    background-color: var(--neon-cart); 
+.navigation li a.nav-cart:hover {
+    background-color: var(--neon-cart);
     box-shadow: 0 0 25px var(--neon-cart);
-    color: #000; 
+    color: #000;
+}
+
+/* Animação da Barra (Surgindo de baixo e ganhando brilho) */
+@keyframes slideUp {
+    0% {
+        transform: translate(-50%, 100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+/* Animação dos Ícones (Caindo e quicando levemente) */
+@keyframes dropIcon {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        border-color: var(--glass-border);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    20%,
+    24%,
+    55% {
+        border-color: var(--primary-neon);
+        box-shadow: 0 0 15px var(--primary-neon), 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
 }

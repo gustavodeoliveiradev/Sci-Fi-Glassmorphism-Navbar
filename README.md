@@ -11,16 +11,16 @@ Uma barra de navegação moderna com efeitos de Glassmorphism e interatividade a
 ## 🚀 Evolução do Projeto
 Nesta etapa, focamos na profundidade visual e na organização do código utilizando boas práticas de CSS.
 
-### 🛠️ Implementações do Dia 3:
-- **Keyframes Avançados:** Criação de animações de entrada (`slideUp` e `dropIcon`) para um carregamento dinâmico da interface.
-- **Animation Chaining:** Técnica de encadeamento de múltiplas animações em um único elemento (movimento + efeito de brilho).
-- **Staggering Effect:** Implementação de atrasos calculados (`animation-delay`) para criar um efeito cascata na descida dos ícones.
-- **Efeito Flicker Neon:** Micro-interação visual que simula a ativação de energia na borda da navbar ao finalizar o carregamento.
-- **Cubic-Bezier Smoothing:** Uso de curvas de transição personalizadas para movimentos mais orgânicos e menos lineares.
+### 🛠️ Implementações do Dia 4:
+- **DOM Manipulation:** Uso de JavaScript para gerenciar estados ativos e capturar eventos de clique em tempo real.
+- **Dynamic Sliding Indicator:** Criação de um indicador visual que calcula a posição (`offsetLeft`) e largura (`offsetWidth`) do elemento para deslizar suavemente entre os ícones.
+- **State Management:** Lógica para alternância de classes CSS (`classList.remove/add`), garantindo que apenas um item esteja ativo por vez.
+- **Dynamic Styling via JS:** Alteração programática de cores de fundo e sombras (Glow) baseada na classe do ícone selecionado.
+- **Feedback Visual Premium:** Implementação de transformações de escala e posição para reforçar a seleção do usuário.
 
 ## 📅 Cronograma de Evolução
 - [x] **Dia 1 (Dom):** Estrutura semântica e Layout Base.
 - [x] **Dia 2 (Seg):** Refinamento de Glassmorphism, Mesh Gradients e Variáveis Neon.
 - [x] **Dia 3 (Ter):** Animações de entrada (Keyframes) e encadeamento de efeitos.
-- [ ] **Dia 4 (Qua):** Lógica de "Item Ativo" com JavaScript e Indicador Deslizante.
-- [ ] **Dia 5 (Qui):** Responsividade e adaptação para Mobile.
+- [x] **Dia 4 (Qua):** Lógica de "Item Ativo" com JavaScript e Indicador Deslizante.
+- [ ] **Dia 5 (Qui):** Responsividade e adaptação para Mobile (Media Queries).

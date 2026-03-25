@@ -208,3 +208,43 @@ body {
         box-shadow: 0 0 15px var(--primary-neon), 0 15px 35px rgba(0, 0, 0, 0.5);
     }
 }
+
+.indicator {
+    position: absolute;
+    bottom: 5px;
+    height: 4px;
+    width: 30px;
+    background: var(--primary-neon);
+    border-radius: 10px;
+    transition: 0.5s;
+    /* O segredo do deslize */
+    box-shadow: 0 0 15px var(--primary-neon);
+    opacity: 0;
+    /* Começa invisível até o primeiro clique */
+}
+
+.navigation li.active a {
+    color: #fff;
+    transform: translateY(-5px);
+    /* Puxa a cor neon baseada na classe do link */
+}
+
+.navigation li.active a.nav-home {
+    text-shadow: 0 0 10px var(--neon-home);
+}
+
+.navigation li.active a.nav-user {
+    text-shadow: 0 0 10px var(--neon-user);
+}
+
+.navigation li.active a.nav-dashboard {
+    text-shadow: 0 0 10px var(--neon-dashboard);
+}
+
+.navigation li.active a.nav-chats {
+    text-shadow: 0 0 10px var(--neon-chats);
+}
+
+.navigation li.active a.nav-cart {
+    text-shadow: 0 0 10px var(--neon-cart);
+}

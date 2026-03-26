@@ -120,6 +120,15 @@ body {
     justify-content: center;
     border-radius: 50%;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.navigation li a:active,
+.navigation li a:focus {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: none;
 }
 
 .navigation li a:hover {
@@ -247,4 +256,41 @@ body {
 
 .navigation li.active a.nav-cart {
     text-shadow: 0 0 10px var(--neon-cart);
+}
+
+/* Responsividade Aprimorada para Telas Pequenas */
+@media (max-width: 420px) {
+    .navigation {
+        width: 95%;
+        /* Quase toda a largura */
+        padding: 5px;
+        /* Padding interno menor */
+    }
+
+    .navigation ul {
+        justify-content: center;
+        /* Centraliza o grupo de ícones */
+        padding: 0 10px;
+        /* Margem lateral interna para respiro */
+        gap: 0;
+        /* Remove o gap para centralização perfeita */
+    }
+
+    .navigation li a {
+        width: 38px;
+        /* Ícones menores */
+        height: 38px;
+        margin: 0 4px;
+        /* Pequeno espaçamento lateral */
+    }
+
+    /* Reduz o impacto do hover no mobile */
+    .navigation li a:hover {
+        transform: translateY(-5px) scale(1);
+    }
+
+    /* Garante o círculo perfeito no mobile */
+    .navigation li.active a {
+        border-radius: 50%;
+    }
 }

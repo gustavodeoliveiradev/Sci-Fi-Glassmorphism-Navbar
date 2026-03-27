@@ -11,17 +11,14 @@ Uma barra de navegação moderna com efeitos de Glassmorphism e interatividade a
 ## 🚀 Evolução do Projeto
 Nesta etapa, focamos na profundidade visual e na organização do código utilizando boas práticas de CSS.
 
-### 🛠️ Implementações do Dia 5:
-- **Mobile Responsive Design:** Implementação de Media Queries para adaptação da interface em diferentes tamanhos de tela.
-- **Mobile UX Refinement:** Eliminação do *Tap Highlight Color* padrão dos navegadores mobile para garantir um feedback visual limpo e customizado.
-- **Touch Target Optimization:** Ajuste de dimensões e espaçamentos para melhorar a precisão do toque em dispositivos móveis.
-- **Fluid Layout & Centralização:** Refatoração do sistema de posicionamento (`transform` + `left`) para evitar quebras em telas ultra-narrow (abaixo de 375px).
-- **Bug Fix (Visual Glitch):** Correção do efeito "quadrado" no clique mobile, forçando a persistência do `border-radius` em estados ativos.
+### 🛠️ Implementações do Dia 6:
+- **Web Accessibility (A11y):** Implementação de navegação completa via teclado (`Tab`), tornando a interface acessível para todos os usuários.
+- **Dynamic Color Sync:** Lógica em JavaScript para sincronizar a cor e o *glow* do indicador deslizante com a paleta neon individual de cada ícone.
+- **Focus-Visible Styling:** Estilização de foco personalizada para garantir uma trilha visual clara durante a navegação por teclado, sem comprometer o design Sci-Fi.
+- **Semantic HTML & ARIA:** Uso estratégico de `aria-label` e `aria-current` para fornecer contexto em tempo real a tecnologias assistivas (leitores de tela).
+- **Code Optimization:** Refatoração da lógica de seleção para garantir que o feedback visual (cor + posição) seja instantâneo e livre de *glitches*.
 
 ## 📅 Cronograma de Evolução
-- [x] **Dia 1 (Dom):** Estrutura semântica e Layout Base.
-- [x] **Dia 2 (Seg):** Refinamento de Glassmorphism, Mesh Gradients e Variáveis Neon.
-- [x] **Dia 3 (Ter):** Animações de entrada (Keyframes) e encadeamento de efeitos.
-- [x] **Dia 4 (Qua):** Lógica de "Item Ativo" com JavaScript e Indicador Deslizante.
-- [x] **Dia 5 (Qui):** Responsividade, Mobile UX e correção de visual glitches.
-- [ ] **Dia 6 (Sex):** Acessibilidade (A11y) e Refinamento de Performance.
+- [x] **Dia 1 ao 5:** (Concluídos: Estrutura, Glassmorphism, Animações, JS Base e Responsividade)
+- [x] **Dia 6 (Sex):** Acessibilidade (A11y), Sincronização de Cores e UX de Teclado.
+- [ ] **Dia 7 (Sáb):** Documentação Final, Showcase e Deploy Definitivo.

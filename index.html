@@ -1,39 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Navbar futurista com efeito glassmorphism e animações sci-fi">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="styles.css">
-    <title>🛸 Sci-Fi Glassmorphism Navbar</title>
+    <title>Sci-Fi Glassmorphism Navbar</title>
 </head>
 
 <body>
-    <div id="main-container">
-        <nav class="navigation">
-            <ul>
-                <li title="Home">
-                    <a href="#" class="nav-home" aria-label="Ir para Home"><i class="fa-solid fa-house"></i></a>
+    <main id="main-container">
+        <nav class="navigation" aria-label="Navegação principal">
+            <ul class="nav-list">
+                <li class="nav-item" data-target="home">
+                    <a href="#home" class="nav-link nav-home" data-nav="home" aria-label="Home">
+                        <i class="fa-solid fa-house" aria-hidden="true"></i>
+                    </a>
                 </li>
-                <li title="User">
-                    <a href="#" class="nav-user" aria-label="Ir para User"><i class="fa-solid fa-user"></i></a>
+                <li class="nav-item" data-target="user">
+                    <a href="#user" class="nav-link nav-user" data-nav="user" aria-label="User">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                    </a>
                 </li>
-                <li title="Dashboard">
-                    <a href="#" class="nav-dashboard" aria-label="Ir para Dashboard"><i class="fa-solid fa-rocket"></i></a>
+                <li class="nav-item" data-target="dashboard">
+                    <a href="#dashboard" class="nav-link nav-dashboard" data-nav="dashboard" aria-label="Dashboard">
+                        <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                    </a>
                 </li>
-                <li title="Chats">
-                    <a href="#" class="nav-chats" aria-label="Ir para Chats"><i class="fa-solid fa-people-group"></i></a>
+                <li class="nav-item" data-target="chats">
+                    <a href="#chats" class="nav-link nav-chats" data-nav="chats" aria-label="Chats">
+                        <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                    </a>
                 </li>
-                <li title="Cart">
-                    <a href="#" class="nav-cart" aria-label="Ir para Cart"><i class="fa-solid fa-shopping-cart"></i></a>
+                <li class="nav-item" data-target="cart">
+                    <a href="#cart" class="nav-link nav-cart" data-nav="cart" aria-label="Cart">
+                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    </a>
                 </li>
                 <div class="indicator"></div>
             </ul>
         </nav>
-    </div>
+    </main>
+
     <script src="scripts.js"></script>
 </body>
 

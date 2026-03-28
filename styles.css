@@ -1,23 +1,19 @@
+/* ============================================
+   SCI-FI GLASSMORPHISM NAVBAR
+   ============================================ */
+
 :root {
     /* Cores Principais */
     --primary-neon: #a855f7;
-    /* Roxo principal */
     --secondary-neon: #22d3ee;
-    /* Ciano para contraste */
     --accent-neon: #f472b6;
-    /* Rosa para detalhes */
 
     /* Paleta Neon Spectrum */
     --neon-home: #00f2ff;
-    /* Ciano Elétrico */
     --neon-user: #7000ff;
-    /* Roxo Profundo (Gohan style) */
     --neon-dashboard: #ff0055;
-    /* Rosa Choque / Magenta */
     --neon-chats: #00ff88;
-    /* Verde Primavera */
     --neon-cart: #ffaa00;
-    /* Laranja Âmbar */
 
     /* Vidro e Texto */
     --glass-bg: rgba(255, 255, 255, 0.05);
@@ -41,11 +37,7 @@ body {
     justify-content: center;
     height: 100vh;
     overflow: hidden;
-    /* Evita scrolls indesejados */
     background-color: #0f172a;
-    /* Fundo escuro base */
-
-    /* "Mesh" Gradient */
     background-image:
         radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
         radial-gradient(at 100% 0%, rgba(34, 211, 238, 0.15) 0px, transparent 50%),
@@ -53,20 +45,17 @@ body {
         radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%);
 }
 
+/* ─── NAVIGATION ─── */
 .navigation {
     position: fixed;
     bottom: 30px;
     left: 50%;
-    /* Joga o início da barra pro meio */
     transform: translateX(-50%);
-    /* Puxa 50% da largura da própria barra de volta */
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
-    /* Safari */
     border: 1px solid var(--glass-border);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    /* Brilho superior */
     border-radius: 50px;
     padding: 5px 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
@@ -80,36 +69,23 @@ body {
     gap: 15px;
     list-style: none;
     padding: 5px;
+    position: relative;
 }
 
 .navigation ul li {
     opacity: 0;
-    /* Começam invisíveis */
     animation: dropIcon 0.5s ease forwards;
+    position: relative;
 }
 
 /* Delays individuais para o efeito cascata */
-.navigation ul li:nth-child(1) {
-    animation-delay: 0.5s;
-}
+.navigation ul li:nth-child(1) { animation-delay: 0.5s; }
+.navigation ul li:nth-child(2) { animation-delay: 0.6s; }
+.navigation ul li:nth-child(3) { animation-delay: 0.7s; }
+.navigation ul li:nth-child(4) { animation-delay: 0.8s; }
+.navigation ul li:nth-child(5) { animation-delay: 0.9s; }
 
-.navigation ul li:nth-child(2) {
-    animation-delay: 0.6s;
-}
-
-.navigation ul li:nth-child(3) {
-    animation-delay: 0.7s;
-}
-
-.navigation ul li:nth-child(4) {
-    animation-delay: 0.8s;
-}
-
-.navigation ul li:nth-child(5) {
-    animation-delay: 0.9s;
-}
-
-/* Estilo base para todos os links */
+/* ─── LINKS ─── */
 .navigation li a {
     color: var(--icon-color);
     text-decoration: none;
@@ -122,9 +98,34 @@ body {
     transition: all 0.3s ease;
     -webkit-tap-highlight-color: transparent;
     outline: none;
+    position: relative;
+    font-size: 1.2rem;
 }
 
-/* Estilo para quando o usuário navega via TAB */
+/* Tooltip com o title (usando o atributo aria-label) */
+.navigation li a::before {
+    content: attr(aria-label);
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.navigation li a:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Focus visible para acessibilidade */
 .navigation li a:focus-visible {
     outline: 2px solid var(--primary-neon);
     outline-offset: 5px;
@@ -145,7 +146,7 @@ body {
     transform: translateY(-15px) scale(1.1);
 }
 
-/* Hover Individual usando as variáveis do root */
+/* ─── HOVER INDIVIDUAL COM CORES NEON ─── */
 .navigation li a.nav-home:hover {
     background-color: var(--neon-home);
     box-shadow: 0 0 25px var(--neon-home);
@@ -176,30 +177,52 @@ body {
     color: #000;
 }
 
-/* Animação da Barra (Surgindo de baixo e ganhando brilho) */
+/* ─── INDICATOR ─── */
+.indicator {
+    position: absolute;
+    bottom: 3px;
+    height: 4px;
+    width: 30px;
+    background: var(--primary-neon);
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 15px var(--primary-neon);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ─── ACTIVE STATE ─── */
+.navigation li.active a {
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.navigation li.active a.nav-home { text-shadow: 0 0 10px var(--neon-home); }
+.navigation li.active a.nav-user { text-shadow: 0 0 10px var(--neon-user); }
+.navigation li.active a.nav-dashboard { text-shadow: 0 0 10px var(--neon-dashboard); }
+.navigation li.active a.nav-chats { text-shadow: 0 0 10px var(--neon-chats); }
+.navigation li.active a.nav-cart { text-shadow: 0 0 10px var(--neon-cart); }
+
+/* ─── ANIMAÇÕES ─── */
 @keyframes slideUp {
     0% {
         transform: translate(-50%, 100px);
         opacity: 0;
     }
-
     100% {
         transform: translate(-50%, 0);
         opacity: 1;
     }
 }
 
-/* Animação dos Ícones (Caindo e quicando levemente) */
 @keyframes dropIcon {
     0% {
         transform: translateY(-50px);
         opacity: 0;
     }
-
     60% {
         transform: translateY(10px);
     }
-
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -207,99 +230,46 @@ body {
 }
 
 @keyframes flicker {
-
-    0%,
-    18%,
-    22%,
-    25%,
-    53%,
-    57%,
-    100% {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
         border-color: var(--glass-border);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     }
-
-    20%,
-    24%,
-    55% {
+    20%, 24%, 55% {
         border-color: var(--primary-neon);
         box-shadow: 0 0 15px var(--primary-neon), 0 15px 35px rgba(0, 0, 0, 0.5);
     }
 }
 
-.indicator {
-    position: absolute;
-    bottom: 5px;
-    height: 4px;
-    width: 30px;
-    background: var(--primary-neon);
-    border-radius: 10px;
-    transition: 0.5s;
-    /* O segredo do deslize */
-    box-shadow: 0 0 15px var(--primary-neon);
-    opacity: 0;
-    /* Começa invisível até o primeiro clique */
-}
-
-.navigation li.active a {
-    color: #fff;
-    transform: translateY(-5px);
-    /* Puxa a cor neon baseada na classe do link */
-}
-
-.navigation li.active a.nav-home {
-    text-shadow: 0 0 10px var(--neon-home);
-}
-
-.navigation li.active a.nav-user {
-    text-shadow: 0 0 10px var(--neon-user);
-}
-
-.navigation li.active a.nav-dashboard {
-    text-shadow: 0 0 10px var(--neon-dashboard);
-}
-
-.navigation li.active a.nav-chats {
-    text-shadow: 0 0 10px var(--neon-chats);
-}
-
-.navigation li.active a.nav-cart {
-    text-shadow: 0 0 10px var(--neon-cart);
-}
-
-/* Responsividade Aprimorada para Telas Pequenas */
+/* ─── RESPONSIVO ─── */
 @media (max-width: 420px) {
     .navigation {
         width: 95%;
-        /* Quase toda a largura */
         padding: 5px;
-        /* Padding interno menor */
     }
 
     .navigation ul {
         justify-content: center;
-        /* Centraliza o grupo de ícones */
         padding: 0 10px;
-        /* Margem lateral interna para respiro */
         gap: 0;
-        /* Remove o gap para centralização perfeita */
     }
 
     .navigation li a {
         width: 38px;
-        /* Ícones menores */
         height: 38px;
         margin: 0 4px;
-        /* Pequeno espaçamento lateral */
+        font-size: 1rem;
     }
 
-    /* Reduz o impacto do hover no mobile */
     .navigation li a:hover {
         transform: translateY(-5px) scale(1);
     }
 
-    /* Garante o círculo perfeito no mobile */
     .navigation li.active a {
         border-radius: 50%;
+    }
+    
+    .indicator {
+        width: 25px;
+        bottom: -1px;
     }
 }
